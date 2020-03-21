@@ -3,6 +3,8 @@ package icy.inslem.imageslider;
 import android.app.Activity;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -25,12 +27,13 @@ public class ImageSlider {
                     @Override
                     public void run() {
                         if (width > 0 && height > 0) {
-                            Picasso.get().load(imagesURLs.get(i))
-                                    .resize(width, height)
-                                    .centerCrop()
+                            Glide.with(activity)
+                                    .load(imagesURLs.get(i))
+                                    .apply(new RequestOptions().override(width, height))
                                     .into(imageView);
                         } else {
-                            Picasso.get().load(imagesURLs.get(i))
+                            Glide.with(activity)
+                                    .load(imagesURLs.get(i))
                                     .into(imageView);
                         }
                     }

@@ -19,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
 
     private String TAG = "MainActivity";
     private ImageView imageViewBanner;
-    ArrayList<String> imagesURLs = new ArrayList<>();
+    private ArrayList<String> imagesURLs = new ArrayList<>();
     private MainActivity mainActivity;
-
+    private int delay = 5; // in seconds
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,15 +34,14 @@ public class MainActivity extends AppCompatActivity {
         imagesURLs.add("https://pixabay.com/get/54e0dd414951ad14f1dc8460825668204022dfe05b55764e702673d0/banner-2082331_640.png");
         imagesURLs.add("https://pixabay.com/get/54e8d4404e5aab14f1dc8460825668204022dfe05b55764e732f79d0/nature-2813487_640.jpg");
         imagesURLs.add("https://pixabay.com/get/57e6dd454356af14f1dc8460825668204022dfe05b55764e70267dd5/banner-1686943_640.jpg");
-
+        imagesURLs.add("https://d33wubrfki0l68.cloudfront.net/4d881a9d53e300fb2d86990647a3853bb4ec8adb/3e7f0/static/blog/posts/how-to-create-high-quality-gifs/noblur.gif");
     }
-
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
 
-        ImageSlider.slideImages(mainActivity, imagesURLs, imageViewBanner, 2);
+        ImageSlider.slideImages(mainActivity, imagesURLs, imageViewBanner, delay);
     }
 
    }
