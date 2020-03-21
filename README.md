@@ -31,6 +31,7 @@ dependencies {
   private ImageView imageViewBanner;
   private ArrayList<String> imagesURLs = new ArrayList<>();
   private MainActivity mainActivity;
+  private int delay = 2; // in seconds
   
   ...
   @Override
@@ -47,7 +48,7 @@ dependencies {
   	imagesURLs.add("https://pixabay.com/get/57e6dd454356af14f1dc8460825668204022dfe05b55764e70267dd5/banner-1686943_640.jpg");
 
 
-  	ImageSlider.slideImages(mainActivity, imagesURLs, imageViewBanner, 2);
+  	ImageSlider.slideImages(mainActivity, imagesURLs, imageViewBanner, delay);
 
 ```
 
@@ -59,7 +60,7 @@ To fit the ImageView size call it inside onWindowFocusChanged
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
 
-        ImageSlider.slideImages(mainActivity, imagesURLs, imageViewBanner, 2);
+        ImageSlider.slideImages(mainActivity, imagesURLs, imageViewBanner, delay);
     }
 
 ```
