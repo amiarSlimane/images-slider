@@ -52,16 +52,5 @@ dependencies {
 
 ```
 
-To fit the ImageView size call it inside onWindowFocusChanged
 
-```java
-
-  @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-
-        ImageSlider.slideImages(mainActivity, imagesURLs, imageViewBanner, delay);
-    }
-
-```
 
