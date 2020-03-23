@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imageViewBanner;
     private ArrayList<String> imagesURLs = new ArrayList<>();
     private MainActivity mainActivity;
-    private int delay = 5; // in seconds
+    private int delay = 3; // in seconds
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,13 +35,10 @@ public class MainActivity extends AppCompatActivity {
         imagesURLs.add("https://raw.githubusercontent.com/amiarSlimane/images-slider/master/images/3.png");
         imagesURLs.add("https://raw.githubusercontent.com/amiarSlimane/images-slider/master/images/4.jpg");
         imagesURLs.add("https://raw.githubusercontent.com/amiarSlimane/images-slider/master/images/noblur.gif");
-    }
-
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
 
         ImageSlider.slideImages(mainActivity, imagesURLs, imageViewBanner, delay);
+
     }
+
 
    }
